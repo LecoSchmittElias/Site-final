@@ -70,6 +70,7 @@
             let nome = document.getElementById("nome-caixa").value
             let nota;
 
+
             if ($("input[type='radio'][id='rate-5']").is(':checked') ){
             nota=5;
             }else if($("input[type='radio'][id='rate-4']").is(':checked') ){
@@ -91,13 +92,17 @@
             if(nome == null || nota == null){
                 alert('Por favor preencha corretamente os campos!');
             }else{
+
+                let json = {
+                nota: nota, 
+                nome: nome
+            }
                 alert('Feedback enviado!')
-                console.log(`Usuario: ${nome}`);
-                console.log(`Nota: ${nota}`);
+                console.log(`Usuario: ${json.nome}`);
+                console.log(`Nota: ${json.nota}`);
                 document.getElementById("button-home").style.display='none';
             }
         }
-        sessionStorage.removeItem("")
         document.getElementById("button-home").addEventListener("click",feedback)
         
     </script>

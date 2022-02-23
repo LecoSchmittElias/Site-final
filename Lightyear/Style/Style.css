@@ -76,6 +76,10 @@ header {
     height: 80px;
 }
 
+#logo:hover{
+    cursor: pointer;
+}
+
 /* Rodapé*/
 #rodape {
     width: 100%;
