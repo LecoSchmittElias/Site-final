@@ -1,0 +1,30 @@
+<header id="header" class="flex">
+    <div id="cabecalho" class="flex">
+        <img src="Assets/Logo_novo.png" alt="logo" id="logo">
+        <a href="Index.html"><input type="button" class="botao" id="botao-home" onclick="botao('home')"
+                value="Home"></a>
+        <a href="Produtos.html"><input type="button" class="botao" id="botao-produtos" onclick="botao('produto')"
+                value="Produtos"></a>
+        <a href="perto.html"><input type="button" class="botao" id="botao-perto" onclick="botao('perto')" value="Está perto"></a>
+        <a href="sobre.html"> <input type="button" class="botao" id="botao-sobre" onclick="botao('sobre')"
+                value="Sobre nós"></a>
+    </div>
+
+    <script>
+        function botao(nome) {
+            if (nome === "home") {
+                sessionStorage.setItem("var", "botao-home");
+            }
+            if (nome === "produto") {
+                sessionStorage.setItem("var", "botao-produtos");
+            }
+            if (nome === "perto") {
+                sessionStorage.setItem("var", "botao-perto");
+            }
+            if (nome === "sobre") {
+                sessionStorage.setItem("var", "botao-sobre");
+            }
+        }
+        document.getElementById( sessionStorage.getItem("var")?sessionStorage.getItem("var"):"botao-home").style.backgroundColor = "#c80a2e";
+    </script>
+</header>

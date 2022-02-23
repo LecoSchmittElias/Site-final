@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/Style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <title>Lightyear</title>
+    <link rel="icon" type="png" href="assets/icone.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        $(function teste() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--Essa pagina é gambiarra pura, logo aconselho a não copia-la!-->
+    <div id="container">
+        <div id="header"></div>
+        <main id="main" class="flex">
+            <div id="background-home">
+                <div class="parallax">
+                </div>
+            </div>
+            <div id="absolut" class="flex">
+                <DIV id="dez-linhas">
+                    <h2 id="text-home">Visamos construir relacionamentos de longo prazo, tendo como base a ética
+                        profissional. Estamos comprometidas com o sucesso de cada um de nossos clientes, pois
+                        acreditamos que o crescimento deles também será seu e de seus colaboradores.
+                        Quando nossos clientes ganham, nós também ganhamos. Fomos reconhecidos por nossas conquistas em
+                        categorias como diversidade, ética, excelência, inovação e integridade.</h2>
+                </DIV>
+            </div>
+            <div id="home-avaliacao">
+                <div id="all-avaliação" class="flex">
+                    <br>
+                    <h2 id="aval-texto">Gostou do nosso site? Avalie-nos</h2>
+                    <div id="text-ava">
+                        <input type="text" placeholder="nome" id="nome-caixa" class="botao-home">
+                    </div>
+                    <div id="text-ava">
+                        <div class="container-star">
+                            <div class="star-widget">
+                                <input type="radio" name="rate" id="rate-5" style="display:none">
+                                <label for="rate-5" class="fas fa-star" style="cursor:pointer"></label>
+                                <input type="radio" name="rate" id="rate-4" style="display:none">
+                                <label for="rate-4" class="fas fa-star" style="cursor:pointer"></label>
+                                <input type="radio" name="rate" id="rate-3" style="display:none">
+                                <label for="rate-3" class="fas fa-star" style="cursor:pointer"></label>
+                                <input type="radio" name="rate" id="rate-2" style="display:none">
+                                <label for="rate-2" class="fas fa-star" style="cursor:pointer"></label>
+                                <input type="radio" name="rate" id="rate-1" style="display:none">
+                                <label for="rate-1" class="fas fa-star" style="cursor:pointer"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="button" class="botao" id="button-home" value="enviar">
+                </div>
+            </div>
+        </main>
+        <div id="footer"></div>
+    </div>
+
+    <script>
+           async function feedback (){
+            let nome = document.getElementById("nome-caixa").value
+            let nota;
+
+            if ($("input[type='radio'][id='rate-5']").is(':checked') ){
+            nota=5;
+            }else if($("input[type='radio'][id='rate-4']").is(':checked') ){
+                nota=4;
+            }else if($("input[type='radio'][id='rate-3']").is(':checked') ){
+                nota=3;
+            }else if($("input[type='radio'][id='rate-2']").is(':checked') ){
+                nota=2;
+            }else if($("input[type='radio'][id='rate-1']").is(':checked') ){
+                nota=1;
+            }else{
+                nota = null
+            }
+
+            if (nome === ''){
+                nome = null;
+            }
+
+            if(nome == null || nota == null){
+                alert('Por favor preencha corretamente os campos!');
+            }else{
+                alert('Feedback enviado!')
+                console.log(`Usuario: ${nome}`);
+                console.log(`Nota: ${nota}`);
+                document.getElementById("button-home").style.display='none';
+            }
+        }
+        sessionStorage.removeItem("")
+        document.getElementById("button-home").addEventListener("click",feedback)
+        
+    </script>
+</body>
+
+</html>
